@@ -6,7 +6,7 @@ export const GetInstructors = async (req, res) => {
         const instructors = await aiInstructors.find();
         res.status(200).json(instructors);
     } catch (error) {
-        res.status(500).json({ message: error.Message });
+        res.status(500).json({ message: error.message });
     } finally {
         console.log("finally Get Instructors");
     }
@@ -19,7 +19,7 @@ export const CreateInstructors = async (req, res) => {
         await instructors.save();
         res.status(200).json(instructors);
     } catch (error) {
-        res.status(500).json({ message: error.Message });
+        res.status(500).json({ message: error.message });
     } finally {
         console.log("finally Create Instructors");
     }
@@ -32,7 +32,7 @@ export const UpdateInstructors = async (req, res) => {
         });
         res.status(200).json(instructors);
     } catch (error) {
-        res.status(500).json({ message: error.Message });
+        res.status(500).json({ message: error.message });
     } finally {
         console.log("finally Update Instructors");
     }
@@ -43,7 +43,7 @@ export const DeleteInstructors = async (req, res) => {
         const instructors = await aiInstructors.findByIdAndDelete(req.params.id);
         res.status(200).json(instructors);
     } catch (error) {
-        res.status(500).json({ message: error.Message });
+        res.status(500).json({ message: error.message });
     } finally {
         console.log("finally Delete Instructors");
     }

@@ -5,7 +5,7 @@ export const GetHero = async (req, res) => {
     const hero = await aiHero.find();
     res.status(200).json(hero);
   } catch (error) {
-    res.status(500).json({ message: error.Message });
+    res.status(500).json({ message: error.message });
   } finally {
     console.log("finally Get Hero");
   }
@@ -18,7 +18,7 @@ export const CreateHero = async (req, res) => {
     await hero.save();
     res.status(200).json(hero);
   } catch (error) {
-    res.status(500).json({ message: error.Message });
+    res.status(500).json({ message: error.message });
   } finally {
     console.log("finally Create Hero");
   }
@@ -31,7 +31,7 @@ export const updateHero = async (req, res) => {
     });
     res.status(200).json(hero);
   } catch (error) {
-    res.status(500).json({ message: error.Message });
+    res.status(500).json({ message: error.message });
   } finally {
     console.log("finally Update Hero");
   }
@@ -42,7 +42,7 @@ export const deleteHero = async (req, res) => {
     const hero = await aiHero.findByIdAndDelete(req.params.id);
     res.status(200).json(hero);
   } catch (error) {
-    res.status(500).json({ message: error.Message });
+    res.status(500).json({ message: error.message });
   } finally {
     console.log("finally Delete Hero");
   }

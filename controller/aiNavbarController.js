@@ -5,7 +5,7 @@ export const GetNavbar = async (req, res) => {
     const navbar = await aiNavbar.find();
     res.status(200).json(navbar);
   } catch (error) {
-    res.status(500).json({ message: error.Message });
+    res.status(500).json({ message: error.message });
   } finally {
     console.log("finally Get Navbar");
   }
@@ -18,7 +18,7 @@ export const CreateNavbar = async (req, res) => {
     await navbar.save();
     res.status(200).json(navbar);
   } catch (error) {
-    res.status(500).json({ message: error.Message });
+    res.status(500).json({ message: error.message });
   } finally {
     console.log("finally Create Navbar");
   }
@@ -31,7 +31,7 @@ export const UpdateNavbar = async (req, res) => {
     });
     res.status(200).json(navbar);
   } catch (error) {
-    res.status(500).json({ message: error.Message });
+    res.status(500).json({ message: error.message });
   } finally {
     console.log("finally Update Navbar");
   }
@@ -42,7 +42,7 @@ export const DeleteNavbar = async (req, res) => {
     const navbar = await aiNavbar.findByIdAndDelete(req.params.id);
     res.status(200).json(navbar);
   } catch (error) {
-    res.status(500).json({ message: error.Message });
+    res.status(500).json({ message: error.message });
   } finally {
     console.log("finally Delete Navbar");
   }
