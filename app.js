@@ -18,6 +18,9 @@ import FAQsRouter from "./routers/aiFAQsRouter.js";
 import QuestionRouter from "./routers/aiQuestionRouter.js";
 import FooterRouter from "./routers/aiFooterRouter.js";
 import UserRouter from "./routers/aiUserRouter.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());
