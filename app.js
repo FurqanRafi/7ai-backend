@@ -28,13 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 const port = 3000;
 
-ConnectDB()
-  .then(() => {
-    console.log("MongoDB Connected");
-  })
-  .catch((error) => {
-    console.log("MongoDB Connected FAILED", error);
-  });
+ConnectDB();
 
 app.get("/", (req, res) => {
   res.send("You Entered the Backend");
@@ -57,8 +51,8 @@ app.use("/api", QuestionRouter);
 app.use("/api", FooterRouter);
 app.use("/api", UserRouter);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
 
 export default app;
