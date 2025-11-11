@@ -2,10 +2,11 @@ import aiHero from "../models/aiHero.js";
 
 export const GetHero = async (req, res) => {
   try {
-    const hero = await aiHero.find();
-    res.status(200).json(hero);
+    const hero = await AiHero.findOne(); // or find()
+    res.status(200).json(hero); // ✅ send JSON
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error("Error fetching hero:", error);
+    res.status(500).json({ message: "Server Error", error: error.message });
   } finally {
     console.log("finally Get Hero");
   }
